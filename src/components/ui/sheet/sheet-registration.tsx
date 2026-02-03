@@ -1,4 +1,8 @@
-import { registerSheet, SheetDefinition } from "react-native-actions-sheet";
+import type React from "react";
+import {
+  registerSheet,
+  type SheetDefinition,
+} from "react-native-actions-sheet";
 import {
   BottomMenuSheet,
   ConfirmationSheet,
@@ -39,7 +43,12 @@ declare module "react-native-actions-sheet" {
           description?: string;
           icon?: React.ReactNode;
         }>;
-        onSelect?: (item: any) => void;
+        onSelect?: (item: {
+          id: string;
+          title: string;
+          description?: string;
+          icon?: React.ReactNode;
+        }) => void;
       };
     }>;
     "confirmation-sheet": SheetDefinition<{
@@ -75,5 +84,3 @@ declare module "react-native-actions-sheet" {
     }>;
   }
 }
-
-export {};

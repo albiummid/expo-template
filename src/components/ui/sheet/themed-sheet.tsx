@@ -2,7 +2,7 @@ import { AlertCircle, Check, Info, X } from "lucide-react-native";
 import { Pressable, ScrollView, View } from "react-native";
 import ActionSheet, {
   SheetManager,
-  SheetProps,
+  type SheetProps,
 } from "react-native-actions-sheet";
 import { useTheme } from "@/context/theme-context";
 import { TText, TView } from "../themed";
@@ -271,7 +271,7 @@ interface ListItem {
 }
 
 export function ListSelectionSheet(props: SheetProps<"list-selection-sheet">) {
-  const { themeMode, isUltraDark, accentColor } = useTheme();
+  const { themeMode, isUltraDark } = useTheme();
   const isDark = themeMode === "dark" || isUltraDark;
 
   const items: ListItem[] = props.payload?.items || [

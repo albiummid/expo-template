@@ -1,8 +1,8 @@
 // Store exports
 export {
-	useAccentColor,
-	useAuth,
-	useIsOnboarded,
-	useStore,
-	useTheme,
+  useAccentColor,
+  useAuth,
+  useIsOnboarded,
+  useStore,
+  useTheme,
 } from "./store";

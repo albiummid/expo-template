@@ -17,59 +17,59 @@ import { SheetProvider } from "@/providers/sheet-provider";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-	const [appIsReady, setAppIsReady] = useState(false);
+  const [appIsReady, setAppIsReady] = useState(false);
 
-	useEffect(() => {
-		async function prepare() {
-			try {
-				// Pre-load any assets, fonts, or data here
-				// Example: await Font.loadAsync({ ... });
-				// Example: await Asset.loadAsync([require('./assets/image.png')]);
+  useEffect(() => {
+    async function prepare() {
+      try {
+        // Pre-load any assets, fonts, or data here
+        // Example: await Font.loadAsync({ ... });
+        // Example: await Asset.loadAsync([require('./assets/image.png')]);
 
-				// Simulate a loading delay (remove in production)
-				await new Promise((resolve) => setTimeout(resolve, 1000));
-				// throw new Error("Failed to load assets");
-			} catch (e) {
-				console.warn(e);
-			} finally {
-				setAppIsReady(true);
-			}
-		}
+        // Simulate a loading delay (remove in production)
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // throw new Error("Failed to load assets");
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        setAppIsReady(true);
+      }
+    }
 
-		prepare();
-	}, []);
+    prepare();
+  }, []);
 
-	const onLayoutRootView = useCallback(async () => {
-		if (appIsReady) {
-			// Hide splash screen once the app is ready
-			await SplashScreen.hideAsync();
-		}
-	}, [appIsReady]);
+  const onLayoutRootView = useCallback(async () => {
+    if (appIsReady) {
+      // Hide splash screen once the app is ready
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
 
-	if (!appIsReady) {
-		return null;
-	}
+  if (!appIsReady) {
+    return null;
+  }
 
-	return (
-		<View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-			<QueryClientProvider client={queryClient}>
-				<KeyboardProvider>
-					<ThemeProvider>
-						<NetworkProvider showToasts={true}>
-							<SheetProvider>
-								<Stack
-									screenOptions={{
-										headerShown: false,
-										contentStyle: { backgroundColor: "transparent" },
-									}}
-								/>
-							</SheetProvider>
-						</NetworkProvider>
-					</ThemeProvider>
-				</KeyboardProvider>
-			</QueryClientProvider>
-			{/* Toast must be outside of all providers */}
-			<Toast />
-		</View>
-	);
+  return (
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <QueryClientProvider client={queryClient}>
+        <KeyboardProvider>
+          <ThemeProvider>
+            <NetworkProvider showToasts={true}>
+              <SheetProvider>
+                <Stack
+                  screenOptions={{
+                    headerShown: false,
+                    contentStyle: { backgroundColor: "transparent" },
+                  }}
+                />
+              </SheetProvider>
+            </NetworkProvider>
+          </ThemeProvider>
+        </KeyboardProvider>
+      </QueryClientProvider>
+      {/* Toast must be outside of all providers */}
+      <Toast />
+    </View>
+  );
 }

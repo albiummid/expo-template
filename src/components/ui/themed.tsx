@@ -6,8 +6,8 @@ import {
   Pressable,
   type PressableProps,
   ActivityIndicator,
-  StyleProp,
-  ViewStyle,
+  type StyleProp,
+  type ViewStyle,
 } from "react-native";
 import { forwardRef } from "react";
 import { useTheme } from "@/context/theme-context";
@@ -190,13 +190,7 @@ TView.displayName = "TView";
 // ============================================================================
 
 interface TButtonProps extends Omit<PressableProps, "children"> {
-  variant?:
-    | "primary"
-    | "secondary"
-    | "outline"
-    | "ghost"
-    | "danger"
-    | "accent";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "danger" | "accent";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
   disabled?: boolean;
@@ -286,8 +280,7 @@ export const TButton = forwardRef<View, TButtonProps>(
     };
 
     // Base button classes
-    const baseClasses =
-      "rounded-lg items-center justify-center flex-row";
+    const baseClasses = "rounded-lg items-center justify-center flex-row";
 
     // Disabled/loading opacity
     const opacityClass = disabled || isLoading ? "opacity-50" : "";

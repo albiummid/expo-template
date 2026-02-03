@@ -1,3 +1,4 @@
+import type React from "react";
 import { ScrollView, View } from "react-native";
 import { SheetManager } from "react-native-actions-sheet";
 import "./sheets-registration"; // Import to register sheets
@@ -11,7 +12,7 @@ import {
 } from "lucide-react-native";
 import { TButton, TText, TView } from "../themed";
 
-function SheetsDemo() {
+function _SheetsDemo() {
   // Default Action Sheet
   const showDefaultSheet = () => {
     SheetManager.show("default-sheet", {
@@ -67,7 +68,12 @@ function SheetsDemo() {
             icon: <Download size={20} color="#8B5CF6" />,
           },
         ],
-        onSelect: (item: any) => {
+        onSelect: (item: {
+          id: string;
+          title: string;
+          description?: string;
+          icon?: React.ReactNode;
+        }) => {
           console.log("Selected:", item.title);
         },
       },
