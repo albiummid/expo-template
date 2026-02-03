@@ -1,31 +1,31 @@
-import "react-native";
+import 'react-native';
 
-declare module "react-native" {
-    interface ViewProps {
-        className?: string;
-    }
-    interface TextProps {
-        className?: string;
-    }
-    interface ImageProps {
-        className?: string;
-    }
-    interface ScrollViewProps {
-        className?: string;
-    }
-    interface TextInputProps {
-        className?: string;
-    }
-    interface PressableProps {
-        className?: string;
-    }
-    interface FlatListProps<ItemT> {
-        className?: string;
-    }
-    interface SectionListProps<ItemT> {
-        className?: string;
-    }
-    interface TouchableOpacityProps {
-        className?: string;
-    }
+declare module 'react-native' {
+  interface ViewProps {
+    className?: string;
+  }
+  interface TextProps {
+    className?: string;
+  }
+  interface ImageProps {
+    className?: string;
+  }
+  interface ScrollViewProps {
+    className?: string;
+  }
+  interface TextInputProps {
+    className?: string;
+  }
+  interface PressableProps {
+    className?: string;
+  }
+  interface FlatListProps {
+    className?: string;
+  }
+  interface SectionListProps {
+    className?: string;
+  }
+  interface TouchableOpacityProps {
+    className?: string;
+  }
 }

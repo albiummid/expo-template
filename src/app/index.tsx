@@ -49,6 +49,7 @@ const StatBox = ({
   themeMode: string;
 }) => {
   const cardBg = themeMode === 'light' ? '#f5f5f5' : '#1a1a1a';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const textColor = themeMode === 'light' ? '#000' : '#fff';
   const secondaryText = themeMode === 'light' ? '#666' : '#888';
 

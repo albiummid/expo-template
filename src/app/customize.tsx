@@ -10,17 +10,17 @@ import {
 } from '../context/ThemeContext';
 
 // Icon components (simplified for demo)
-const BackIcon = () => <Text className="text-accent text-xl">{'<'}</Text>;
+export const BackIcon = () => <Text className="text-accent text-xl">{'<'}</Text>;
 
-const GraduationCapIcon = ({ filled }: { filled?: boolean }) => (
+export const GraduationCapIcon = ({ filled }: { filled?: boolean }) => (
   <Text className="text-2xl">{filled ? '🎓' : '🎓'}</Text>
 );
 
-const PlusIcon = ({ filled }: { filled?: boolean }) => (
+export const PlusIcon = ({ filled }: { filled?: boolean }) => (
   <Text className="text-2xl">{filled ? '➕' : '+'}</Text>
 );
 
-const GridIcon = ({ filled }: { filled?: boolean }) => (
+export const GridIcon = ({ filled }: { filled?: boolean }) => (
   <Text className="text-2xl">{filled ? '⊞' : '⊡'}</Text>
 );
 
@@ -171,6 +171,7 @@ export default function CustomizeScreen() {
     return '#0a0a0a';
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const getSecondaryBgColor = () => {
     if (themeMode === 'light') return '#f5f5f5';
     if (isUltraDark) return '#050505';
