@@ -1,2 +1,218 @@
-@import "tailwindcss";
-@import "uniwind";
+@import 'tailwindcss';
+@import 'uniwind';
+
+/* ===== THEME SYSTEM ===== */
+
+/* Base theme variables */
+@theme {
+  /* Free accent colors */
+  --color-accent-coral: #ff6b6b;
+  --color-accent-orange: #ff9f43;
+  --color-accent-cyan: #00d2d3;
+  --color-accent-violet: #c56cf0;
+
+  /* Premium accent colors - Row 1 */
+  --color-accent-red: #ef4444;
+  --color-accent-salmon: #f97171;
+  --color-accent-amber: #f59e0b;
+  --color-accent-emerald: #10b981;
+  --color-accent-sky: #0ea5e9;
+  --color-accent-purple: #8b5cf6;
+
+  /* Premium accent colors - Row 2 */
+  --color-accent-rose: #f43f5e;
+  --color-accent-pink: #ec4899;
+  --color-accent-gold: #eab308;
+  --color-accent-lime: #84cc16;
+  --color-accent-indigo: #6366f1;
+  --color-accent-mauve: #9d8ccc;
+
+  /* Premium accent colors - Row 3 */
+  --color-accent-crimson: #dc2626;
+  --color-accent-magenta: #d946ef;
+  --color-accent-green: #22c55e;
+  --color-accent-teal: #14b8a6;
+  --color-accent-slate-purple: #7c6ba1;
+  --color-accent-tan: #a18072;
+
+  /* Premium accent colors - Row 4 */
+  --color-accent-mint: #34d399;
+  --color-accent-peach: #ffa07a;
+  --color-accent-grape: #a855f7;
+  --color-accent-lavender: #f0abfc;
+  --color-accent-watermelon: #fb7185;
+  --color-accent-caramel: #d2691e;
+
+  /* Premium accent colors - Row 5 */
+  --color-accent-aqua: #06b6d4;
+  --color-accent-blush: #fda4af;
+  --color-accent-tomato: #ef4444;
+  --color-accent-seafoam: #5eead4;
+  --color-accent-fuchsia: #e879f9;
+  --color-accent-forest: #16a34a;
+
+  /* Dynamic accent color - will be set by theme */
+  --color-accent: var(--color-accent-cyan);
+  --color-accent-light: color-mix(in srgb, var(--color-accent) 80%, white);
+  --color-accent-dark: color-mix(in srgb, var(--color-accent) 80%, black);
+
+  /* Background colors */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-elevated: #222222;
+
+  /* Text colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  --color-text-tertiary: #666666;
+
+  /* Border colors */
+  --color-border-default: #333333;
+  --color-border-subtle: #222222;
+}
+
+/* Light theme overrides */
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #eeeeee;
+  --color-bg-elevated: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-border-default: #e5e5e5;
+  --color-border-subtle: #f0f0f0;
+}
+
+/* Dark theme */
+.dark {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-elevated: #222222;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  --color-text-tertiary: #666666;
+  --color-border-default: #333333;
+  --color-border-subtle: #222222;
+}
+
+/* Ultra dark theme */
+.ultra-dark {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #050505;
+  --color-bg-tertiary: #0a0a0a;
+  --color-bg-elevated: #0f0f0f;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #888888;
+  --color-text-tertiary: #555555;
+  --color-border-default: #1a1a1a;
+  --color-border-subtle: #111111;
+}
+
+/* ===== ACCENT COLOR VARIANTS ===== */
+/* These classes set the accent color dynamically */
+
+.accent-coral {
+  --color-accent: #ff6b6b;
+}
+.accent-orange {
+  --color-accent: #ff9f43;
+}
+.accent-cyan {
+  --color-accent: #00d2d3;
+}
+.accent-violet {
+  --color-accent: #c56cf0;
+}
+.accent-red {
+  --color-accent: #ef4444;
+}
+.accent-salmon {
+  --color-accent: #f97171;
+}
+.accent-amber {
+  --color-accent: #f59e0b;
+}
+.accent-emerald {
+  --color-accent: #10b981;
+}
+.accent-sky {
+  --color-accent: #0ea5e9;
+}
+.accent-purple {
+  --color-accent: #8b5cf6;
+}
+.accent-rose {
+  --color-accent: #f43f5e;
+}
+.accent-pink {
+  --color-accent: #ec4899;
+}
+.accent-gold {
+  --color-accent: #eab308;
+}
+.accent-lime {
+  --color-accent: #84cc16;
+}
+.accent-indigo {
+  --color-accent: #6366f1;
+}
+.accent-mauve {
+  --color-accent: #9d8ccc;
+}
+.accent-crimson {
+  --color-accent: #dc2626;
+}
+.accent-magenta {
+  --color-accent: #d946ef;
+}
+.accent-green {
+  --color-accent: #22c55e;
+}
+.accent-teal {
+  --color-accent: #14b8a6;
+}
+.accent-slate-purple {
+  --color-accent: #7c6ba1;
+}
+.accent-tan {
+  --color-accent: #a18072;
+}
+.accent-mint {
+  --color-accent: #34d399;
+}
+.accent-peach {
+  --color-accent: #ffa07a;
+}
+.accent-grape {
+  --color-accent: #a855f7;
+}
+.accent-lavender {
+  --color-accent: #f0abfc;
+}
+.accent-watermelon {
+  --color-accent: #fb7185;
+}
+.accent-caramel {
+  --color-accent: #d2691e;
+}
+.accent-aqua {
+  --color-accent: #06b6d4;
+}
+.accent-blush {
+  --color-accent: #fda4af;
+}
+.accent-tomato {
+  --color-accent: #ef4444;
+}
+.accent-seafoam {
+  --color-accent: #5eead4;
+}
+.accent-fuchsia {
+  --color-accent: #e879f9;
+}
+.accent-forest {
+  --color-accent: #16a34a;
+}

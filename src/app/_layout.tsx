@@ -1,7 +1,17 @@
-import "../global.css";
+import '../global.css';
 
-import { Slot } from "expo-router";
+import { Stack } from 'expo-router';
+import { ThemeProvider } from '../context/ThemeContext';
 
 export default function Layout() {
-  return <Slot />;
+  return (
+    <ThemeProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: 'transparent' },
+        }}
+      />
+    </ThemeProvider>
+  );
 }
