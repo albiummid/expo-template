@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAM_ID.com.yourcompany.expotemplate",
+        "paths": [
+          "/",
+          "/customize",
+          "/profile/*",
+          "/settings",
+          "/auth/*"
+        ]
+      }
+    ]
+  }
+}
